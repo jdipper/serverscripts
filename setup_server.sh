@@ -120,11 +120,11 @@ function configure_sshd {
         ;;
   esac
 
-  service sshd reload #Reload sshd
   semanage port -a -t ssh_port_t -p tcp 2345  #Allow port 2345 for SELinux
   firewall-cmd --zone=public --permanent --remove-service=ssh  #Remove old firewall rules
   firewall-cmd --zone=public --permanent --add-port=2345/tcp  #Add new firewall rule
-  firewall-cmd --reloadsystemctl reload sshd  #Reload filewall for sshd
+  firewall-cmd --reload #Reload Firewall
+  systemctl reload sshd  #Reload sshd
   
   echo -e "${C_GREEN}SSH Config successfully updated.${C_NC}"
 
