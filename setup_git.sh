@@ -6,11 +6,11 @@ echo "Please specify your email address (or GitHub email alias):"
 read alias
 echo "Please specify your email address used to log in to GitHub:"
 read email
-echo "Please specify a file in which to save the key ($HOME/.ssh/idrsa):"
+echo "Please specify a file in which to save the key ($HOME/.ssh/id_rsa):"
 read file
 
 if [[ $file == "" ]]; then
-  file="$HOME/.ssh/idrsa"
+  file="$HOME/.ssh/id_rsa"
 fi
 
 git config --global user.name "$name" 
