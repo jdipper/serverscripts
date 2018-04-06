@@ -10,7 +10,7 @@ echo "Please specify a file in which to save the key ($HOME/.ssh/idrsa):"
 read file
 
 if [[ $file == "" ]]; then
-  file="$HOME/.ssh/idsra"
+  file="$HOME/.ssh/idrsa"
 fi
 
 git config --global user.name "$name" 
